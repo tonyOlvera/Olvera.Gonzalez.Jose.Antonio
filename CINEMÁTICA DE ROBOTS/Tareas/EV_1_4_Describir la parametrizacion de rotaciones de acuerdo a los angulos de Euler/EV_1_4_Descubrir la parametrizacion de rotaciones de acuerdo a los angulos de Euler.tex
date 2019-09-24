@@ -1,0 +1,62 @@
+\documentclass[12pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Jose Antonio Olvera Gonzalez }
+\title{Describir la parametrizacion de rotacion de acuerdo a los angulos de Euler }
+\begin{document}
+\begin{center}
+Ángulos de Euler
+\begin{flushleft}
+Puede demostrarse que cualquier rotación de un sólido puede expresarse como la composición de tres rotaciones elementales alrededor de ejes diferentes (no necesariamente ortogonales). A su vez, estas rotaciones pueden considerarse en torno a unos ejes fijos o en torno a unos ejes intrínsecos. Rotaciones que nos llevarán desde un sistema exterior considerado fijo (“sólido 1”) hasta un sistema ligado al sólido (“sólido 4”) mediante sólidos intermedios:
+\begin{flushleft}
+1.- Primero efectuamos una rotación de un ángulo  en torno a un eje del sólido 1 que nos lleva a un sólido intermedio “2”.
+\begin{flushleft}
+2.-A continuación rotamos un ángulo  en torno a un eje del sólido 2, que nos lleva a un sólido intermedio “3”.
+\begin{flushleft}
+3.-Por último, giramos un cierto ángulo  en torno a un eje del sólido 3, lo que nos lleva hasta el sólido móvil 4.
+\begin{flushleft}
+La elección de qué ejes son los de rotación puede hacerse de diferentes formas. La elección que haremos aquí, que es la más habitual en el uso de los ángulos de Euler consiste en la secuencia Z1, X2, Z3.
+\begin{flushleft}
+\textbf{Posición y matriz de rotación}
+\begin{flushleft}
+Para obtener el resultado de la rotación, debemos ver qué posición ocupa en el sistema de referencia fijo un punto perteneciente al sólido. El vector de posición se escribirá con componentes diferentes en la base fija y en la base móvil, aunque el vector sea el mismo donde, por ser un punto del sólido las componentes (X,Y,Z) son constantes. El problema se reduce entonces a relacionar los vectores de las bases. Para ello, componemos las tres rotaciones.
+\begin{flushleft}
+\textbf{Nutación}
+\begin{flushleft}
+La segunda rotación consiste en el giro de un ángulo  alrededor del eje OX2 = OX3. A este eje, que no se ve modificado por la rotación, se lo denomina línea de nodos. Esta rotación nos lleva al sólido intermedio 3, cuya base se relaciona con la 2. Cuando se produce esta rotación sin que se modifiquen las otras dos se dice que el sólido efectúa un movimiento de nutación.
+\begin{flushleft}
+\textbf{Rotación propia}
+\begin{flushleft}
+El tercer giro (rotación propia, rotación intrínseca o simplemente rotación en el contexto del movimiento terrestre) corresponde a un nuevo giro de un ángulo  alrededor del ángulo OZ3 =OZ4 (que no es el mismo, normalmente, que el OZ1 = OZ2). La relación entre las bases 3 y 4 es análoga a la que hay entre la 1 y la 2.
+\begin{flushleft}
+\textbf{Relación inversa}
+\begin{flushleft}
+El origen de los nombres precesión, nutación y rotación procede del análisis del movimiento terrestre. La rotación es el movimiento alrededor del eje terrestre. La precesión es el lento movimiento de dicho eje, que provoca que la estrella situada en el polo norte celeste vaya cambiando en el tiempo. La nutación es el cambio en la inclinación del eje terrestre, que no siempre ha estado a 23º 27' como actualmente.\\
+
+\begin{flushleft}
+\textbf{Matriz de rotación}
+\begin{flushleft}
+Para pasar directamente de la base 4, ligada al sólido, a la base 1, fija, podemos hacer sustituciones sucesivas, aunque los cálculos se vuelven rápidamente engorrosos. La matrix de rotación está formada por los productos escalares entre ambas bases siendo el camino más corto para hallar cada elemento no el pasar de la base 4 a la 1 directamente, sino ayudarnos de las bases intermedias.
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{center}
+\end{document}
