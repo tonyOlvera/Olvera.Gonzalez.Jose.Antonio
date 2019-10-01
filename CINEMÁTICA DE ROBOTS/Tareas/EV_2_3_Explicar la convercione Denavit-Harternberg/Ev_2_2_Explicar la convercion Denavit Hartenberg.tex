@@ -1,0 +1,63 @@
+\documentclass[12pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Jose Antonio Olvera Gonzalez }
+\title{tarea 3}
+\begin{document}
+\textbf{CONVENCIÓN DE DENAVIT HARTENBERG}
+\begin{flushleft}
+Para comenzar hay que entender que este convenio para definir parámetros es una simplificación de la descripción cinemática de un sistema en el que intervienen una serie de articulaciones.
+Supongamos un brazo que puede girar el hombro y el codo hasta la muñeca. Pues para mover la muñeca hasta una posición indicada es evidente que hay que mover las articulaciones anteriores desde el hombro que ha de levantar el codo y finalmente nuestra mano para poder saludar al vecino. A esto se le llama cinemática directa ya que existe una jerarquía de movimientos en la que el padre dominante es el hombro, y el codo y la muñeca sus hijas. Y de la misma manera el codo es padre de la muñeca.\\
+En fin, esta cinemática está gobernada por la denominada composición de movimientos que de forma simple permite conocer como se mueve un punto B (codo) de nuestro brazo, conociendo el movimiento de otro punto A (hombro) y la relación de giro o traslación que hay entre ellos. De esta manera, si sabemos como se mueve el punto B (codo) que pertenece a otro eslabón (en este caso el antebrazo), podremos saber, como se mueve el punto C que es nuestra muñeca.
+\begin{flushleft}
+\emph{ASIGNACIÓN DE EJES}
+\begin{flushleft}
+1. Enumerar los n+1 eslabones de 0 a n, comenzando desde la base (eslabón fijo) y
+terminando en el efector final.\\
+
+2. Identificar los ejes de cada articulación. Si es rotacional será el eje de giro, y si es
+prismática será el eje a lo largo del cual se produce el desplazamiento.\\
+
+3. Enumerar los ejes de 1 a n comenzando desde el que une eslabón base con el eslabón 1.\\
+
+4. Para de 0 a  n-1: situar el eje z en el eje de articulación i+1 .\\
+
+5. El eje Zn se colocará en el extremo del último eslabón, en la misma dirección que el Zn-1.\\
+
+6. Situar el origen del sistema de la base {So} en cualquier punto del eje Zo.\\
+
+7. Para i de n  a : situar el sistema {Si} en la intersección entre el eje Zi y la recta que
+es perpendicular simultáneamente al eje Zi y al eje Zi-1 . Si los ejes Zi y  Zi-1 se
+cortan el sistema {Si} se coloca en el punto de intersección.\\
+
+8. Para i de 1 a n : situar el eje Xi a partir del punto donde se definió el {Si} sobre la
+recta que es perpendicular simultáneamente al eje Zi y al ejeZi-1 . Si los ejes  Zi y Zi-1
+ se cortan el eje Xi debe ser perpendicular a ambos. El sentido es indiferente.\\
+ 
+9. El Xo se puede colocar libremente. Puede resultar útil que esté alineado con el X1 .\\
+
+10.Para i de 0 a n: colocar el eje Yi de modo que forme un sistema dextrógiro con los
+Ejes Xi y Zi.
+\begin{flushleft}
+\textbf{DETERMINACIÓN DE PARÁMETROS}
+\begin{flushleft}
+1. Ɵi: Ángulo alrededor del eje , desde el eje hasta el eje.\\
+
+2. di: Distancia a lo largo del eje , desde el origen del sistema hasta el eje.\\
+
+3. ai: Distancia a lo largo del eje, desde el eje hasta el eje.\\
+
+4. ai: Ángulo alrededor del eje, desde el eje hasta el eje.
+
+\end{flushleft}
+\end{flushleft}
+
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{document}
