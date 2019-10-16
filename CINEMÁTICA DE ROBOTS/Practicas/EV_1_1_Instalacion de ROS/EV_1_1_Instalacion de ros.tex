@@ -1,0 +1,59 @@
+\documentclass[12pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Jose Antonio Olvera Gonzalez }
+\title{Intalacion de ros }
+\begin{document}
+Practica 1 \textbf{Intalacion de ROS}
+\begin{flushleft}
+ROS (Robot Operating System) Un sistema operativo de código abierto que provee librerías y herramientas para ayudar a los desarrolladores de software a crear aplicaciones para robots. ROS provee abstracción de hardware, controladores de dispositivos, librerías, herramientas de visualización, comunicación por mensajes, administración de paquetes y más. ROS está bajo la licencia open source, BSD. Compatible en Ubuntu 14.04.\\
+
+Ubuntu 14.04 Es un sistema operativo basado en GNU/Linux y que se distribuye como software libre, el cual incluye su propio entorno de escritorio denominado Unity. Está compuesto de múltiple software normalmente distribuido bajo una licencia libre o de código abierto. Sus ventajas en la compilación de paquetes de cualquier tipo para versiones antiguas del sistema.
+\begin{flushleft}
+\textbf{INSTALACIóN Y CONFIGURACIóN DE SOURCE.LIST}
+La configuración de su ordenador para aceptar el software de packages.ros.org. ROS índigo solo soporta Saucy (13.10) y Trusty (14.04) para los paquetes de Debian.
+
+Source.list es un archivo se encuentra los paquetes y dependencias necesarios para instalar un software
+
+Para agregar las librerías y dependencias necesarias al archivo source.list ejecuta la siguiente linea de comando:\\
+\textbf{- sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu (lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+}
+\begin{flushleft}
+Agregar la llave y firma para descargar los paquetes fiables del repositorio source.list con el comando:\\\textbf{ -sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net --recv-key 0xB01FA116
+}
+\begin{flushleft}
+Verificar que la lista de paquetes estén actualizados:\\
+sudo apt-get update
+\begin{flushleft}
+La instalación de ROS índigo recomendada a instalar incluye bibliotecas robot-genérica, simuladores 2D / 3D, la navegación y la percepción 2D / 3D. (Se llevara un tiempo instalando ya que son 550 MB Aproximadamente)\\
+-sudo apt-get install ros-indigo-desktop-full
+\begin{flushleft}
+En caso de solicitar instalar paquetería udo ejecuta:\\
+-sudo apt-get install udo
+\begin{flushleft}
+Antes de poder utilizar ROS, necesitará inicializar rosdep. Rosdep permite instalar fácilmente las dependencias del sistema de fuente que desea recopilar y necesario para ejecutar algunos componentes básicos en ROS.\\
+-sudo rosdep init\\
+-rosdep update
+\begin{flushleft}
+Es conveniente si las variables de entorno de ROS se añaden automáticamente a la sesión de golpe cada vez que se inicia una nueva shell:\\
+-echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc\\
+-source ~/.bashrc\begin{flushleft}
+El comando rosinstall es una herramienta de línea de comandos que se utiliza con frecuencia en ROS que se distribuye por separado. Se le permite descargar fácilmente muchos árboles de código fuente para los paquetes de ROS con un comando.
+
+Para instalar esta herramienta en Ubuntu, ejecute:\\
+-sudo apt-get install python-rosinstall
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{flushleft}
+\end{document}

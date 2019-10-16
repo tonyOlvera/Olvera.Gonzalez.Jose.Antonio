@@ -1,0 +1,54 @@
+\documentclass[12pt,letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Jose Antonio Olvera Gonzalez }
+\title{Manipuladores seriales }
+\begin{document}
+\begin{center}
+\textbf{Tipos y aplicaciones de robots manipuladores}
+\begin{flushleft}
+Nomenclatura de las partes mecánicas de un robot serial: \\
+-Un robot es llamado serial o en cadena cinemática abierta cuando hay solamente una secuencia de elos conectando los finales de la cadena.\\
+-Las vinculaciones entre los eslabones pueden ser hechas con juntas de revolución o prismática y cada una suministra un grado de movilidad.\\
+-Los grados de movilidad deben ser adecuadamente distribuídos en la estructura mecánica para dar los grados de libertad para ejecutar una tarea.\\
+-Son necesarios 3 grados de libertad para posicionar un objeto en el espacio tridimensional y otros 3 grados de libertad para orientarlo. \\
+\begin{center}
+\textbf{ Tipos e aplicaciones de robots manipuladores}
+\begin{flushleft}
+Manipulador Serial Antropomórfico Pintura\\
+Manipulador Serial SCARA Manipulación de piezas\\
+El espacio de trabajo representa la porción del ambiente que el efectuador final es capaz de alcanzar.
+\begin{flushleft}
+Tipos y aplicaciones de robots manipuladores: Manipulador Paralelo o de cadena cinemática cerrada ABB Manipulación de piezas y almacenaje Ventajas en relación al robot serial, mayor rigidez y precisión, mayor capacidad de carga, mayores velocidades.
+\begin{center}
+\textbf{Componentes de robots manipuladores}
+\begin{flushleft}
+-Accionamiento: motores eléctricos con reductores, accionamientos hidráulicos y neumáticos.\\
+- Sensores: Encoder (angulares para medición de ángulos en las juntas de revolución o lineales para desplazamientos en juntas de translación), Tacómetro (medición de velocidad), Strain gage (medición de fuerza).\\
+ Sistema de Control: Controlador digital con circuito electrónico capaz de adquirir las señales medidas por los sensores y calcular señales adecuadas para accionar el mecanismo y producir los movimientos programados con los menores errores posibles.
+ \begin{flushleft}
+ Modelado Cinemática Cinemática Inversa de Posición
+ \begin{flushleft}
+ El problema de la cinemática inversa consiste en determinar un conjunto de variables de junta que corresponden a una dada posición y orientación del efectuador final. Para el caso del manipulador planar de 2 eslabones, la cinemática inversa obtiene los ángulos relativos de los eslabones para que el efectuador final se mueva sobre una recta con orientación definida, por ejemplo. Es un problema mas complejo que la cinemática directa.\\
+  No siempre hay una solución puede haber muchas soluciones si el manipulador fuera redundante, puede haber infinitas soluciones.
+  \begin{flushleft}
+  Modelado Dinámica.
+  \begin{flushleft}
+  El modelo dinámico del manipulador es de extrema importancia para la simulación de movimientos, análisis mecánico de la estructura, proyecto de los algoritmos de control y programar movimientos sin usar un sistema físico. Por el análisis del modelo dinámico es posíble determinar la resistencia mecánica de los componentes y los torques y fuerzass que deben ser producidos por el accionamiento / transmisión. Métodos de elaboración de modelos: Lagrange e Newton-Euler, identificación de parámetros del modelo matemático
+  \end{flushleft}
+  \end{flushleft}
+ \end{flushleft}
+ \end{flushleft}
+\end{flushleft}
+\end{center}
+\end{flushleft}
+\end{flushleft}
+\end{center}
+\end{flushleft}
+\end{center}
+\end{document}

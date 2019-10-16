@@ -1,0 +1,90 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=4cm,right=3cm,top=4cm,bottom=3cm]{geometry}
+\author{Diego Cruz Camacho}
+\title{Simulación de cinemática directa e inversa de manipuladores seriales.}
+\begin{document}
+\begin{center}
+\includegraphics[scale=1]{logo.jpg}\\
+Nombre: Cruz Camacho Diego\\
+Materia: Cineamtica de Robots\\
+Carrera: Ing. Mecatrónica\\
+Grado y grupo: 7mo B\\
+Docente: Ing. Carlos Enrique Moran Garabito\\
+Actividad: Simulación de cinemática directa e inversa de manipuladores seriales.\\
+\pagebreak
+\section{INTRODUCCIÓN}
+
+\end{center} 
+
+
+Los robots clásicos presentan una arquitectura antropomórfica serial, semejante al brazo humano. Consisten de una serie de barras rígidas unidas entre sí a través de articulaciones de un grado de libertad del tipo rotacional o prismática. En general cada articulación logra su movimiento a través de un accionamiento de potencia e incluye otros dispositivos como reductores de velocidad, frenos y sensores de posición o velocidad.\\
+
+
+Aunque al definir las relaciones cinemáticas de un robot no se suelen consideran los aspectos dinámicos, nada más alejado de la realidad cuando se quiere diseñar un robot ya que existe una inevitable relación causa-efecto entre la cinemática y la dinámica. Nada más claro resulta que al pensar en las dimensiones de un robot, la longitud de un brazo afecta al cuadrado la inercia de los eslabones y por lo tanto el peso del robot y la potencia requerida en los actuadores.\\
+ 
+
+Las arquitecturas de los robots clásicos presentan una serie de propiedades dinámicas y estructurales caracterizadas por una gran rigidez estructural, repetibilidad y elevado peso propio. El elevado peso propio de los robots clásicos limita la capacidad carga útil y las velocidades de trabajo, las cuales usualmente están en torno a los 60 grados/seg. para las primeras tres articulaciones de los robots industriales (robots de soldadura) y 250 grados/seg.\\
+\pagebreak
+
+\section{CINEMÁTICA DIRECTA DEL BRAZO DE UN ROBOT MANIPULADOR}
+El problema cinemático directo se plantea en términos de encontrar una matriz de transformación que relaciona el sistema de coordenadas ligado al cuerpo en movimiento respecto a un sistema de coordenadas que se toma como referencia. Para lograr esta representación se usan las matrices de transformación homogénea 4x4, la cual incluye las operaciones de traslación y la orientación.\\
+
+
+La matriz de transformación homogénea es una matriz de 4x4 que transforma un vector expresado en coordenadas homogéneas desde un sistema de coordenadas hasta otro sistema de coordenadas.\\
+
+La matriz de transformación homogénea tiene la siguiente estructura:\\
+
+$$T=\begin{bmatrix}
+matriz-de-rotacion & vector-de-posicion\\
+f_{1x3} & escalado
+\end{bmatrix}=
+\begin{bmatrix}
+n_x & s_x & a_x & p_x\\
+n_y & s_y & a_y & p_y\\
+n_z & s_z & a_z & p_z\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+T=\begin{bmatrix}
+n & s & a & p\\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$\\
+Donde los vectores \textbf{n},\textbf{s},\textbf{a}, son vectores ortogonales unitarios y \textbf{p} es un vector que describe la posición \textbf{x},\textbf{y}, \textbf{z} del origen del sistema actual respecto del sistema de referencia. Para entender las propiedades de la matriz de transformación homogénea nos fijamos en el siguiente gráfico.\\
+
+\includegraphics[scale=1]{Captura.PNG} 
+\pagebreak
+\section{CINEMÁTICA INVERSA DEL BRAZO DE UN ROBOT MANIPULADOR}
+La cinemática inversa consiste en hallar los valores de las coordenadas articulares del robot $q = [q_1, q_2, ...q_n]^7 $  conocida la posición y orientación del extremo del robot.\\
+
+A pesar de que en la literatura se pueden encontrar diversos métodos genéricos para la resolución de la cinemática inversa que pueden ser implementados en computadora, suele ser habitual la resolución por medio de métodos geométricos. La mayor parte de los robots suelen tener cadenas cinemáticas relativamente sencillas, que facilitan la utilización de los métodos geométricos. Para muchos robots, si se consideran sólo los tres primeros grados de libertad, se tiene una estructura planar. Este hecho facilita la resolución del problema. Asimismo, los últimos tres grados de libertad suelen usarse para la orientación de la herramienta, lo cual permite una resolución geométrica desacoplada de la posición de la muñeca del robot y de la orientación de la herramienta.\\
+
+Solución del robot cilíndrico de 4 grados de libertad.\\
+
+En este caso particular, la solución geométrica es inmediata. Se parte de que la posición del extremo del robot es conocida $(px, py, pz)$ y se va a calcular los valores de las coordenadas articulares.\\
+
+\textit{Articulación 1}\\
+
+Para obtener el valor $\theta_1 $ de se proyecta el punto del extremo del robot $(p_x, p_y, p_z)$ sobre el plano $(x_0, y_0, z_0)$ obteniendo una sencilla relación angular. Sabiendo que $\theta_1$ es el ángulo entre $x_0$ y $x_1$, se obtienen las siguientes gráficas.\\
+\includegraphics[scale=1]{Captura0.PNG}\\
+
+De las que se deducen las siguientes relaciones:
+$$
+R=\sqrt{p}^2_x +{p}^2_y$$\\
+$$
+r=\sqrt{R}^2 - {a}^2_2 = {d}_3 + {l}_4
+$$\\
+$$sin\phi=\frac{p_y}{R} cos\phi=\frac{p_x}{R}$$\\
+$$sin\beta=\frac{a_2}{R} cos\beta=\frac{r}{R}$$\\
+utilizando la función atan2 de Matlab se calculan los valores de los ángulos:\\
+$$\phi=atan2(sin\phi,cos\phi)
+$$\\
+$$\beta=atan2(sin\beta,cos\beta)
+$$\\
+que permiten el cálculo de $\theta_1$ como $\phi-\beta$.
+\end{document}
